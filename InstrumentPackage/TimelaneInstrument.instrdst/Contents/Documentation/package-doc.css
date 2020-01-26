@@ -1,0 +1,344 @@
+/* Prior to 10.15, WebKit doesn't define 'text' color*/
+.topmatter {
+    /*    display: none*/
+}
+
+.title-box {
+    display: flex;
+}
+
+.title-box .title-box-left img {
+    width: 5.0rem;
+    /*height: 6.0rem;*/
+}
+
+.title-box .title-box-right {
+    padding: 0.5rem;
+}
+
+p.package-version {
+    color: gray;
+    font-size: .435rem;
+    font-weight: bold;
+}
+
+p.package-version::before {
+    content: "v";
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    font-family: -apple-system, -apple-system-font, "SF Pro Text", HelveticaNeue, "Helvetica Neue", Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    margin: 0;
+    line-height: 1.5;
+    color: black;
+}
+
+@media screen and (prefers-dark-interface) {
+    html {
+        color: text;
+    }
+}
+
+body {
+    background-color: white;
+    margin: 0;
+    padding: 1rem;
+}
+
+@media screen and (prefers-dark-interface) {
+    body {
+        background-color: transparent;
+    }
+}
+
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid;
+    border-top-color: -apple-system-gray;
+}
+
+@media screen and (prefers-dark-interface) {
+    hr {
+        border-top-color: -apple-system-gray;
+    }
+}
+
+h1, h2, h3 {
+    position: relative;
+    bottom: 0;
+    overflow: hidden;
+    outline: 0;
+    padding: 0;
+    margin: 0 0 0 0;
+}
+
+h1 {
+    font-size: 1.59rem;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+h3 {
+    font-size: 0.8rem;
+    line-height: 1.2;
+    margin: 0.5rem 0;
+}
+
+article {
+    margin-bottom: 2rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+a.help {
+    color: -apple-system-blue;
+    text-decoration: none;
+}
+
+@media screen and (prefers-dark-interface) {
+    a.help {
+        color: -apple-system-blue;
+    }
+}
+
+a.help:hover {
+    text-decoration: underline;
+}
+
+p, ul, ol, table {
+    font-size: .87rem;
+    font-weight: normal;
+    margin-bottom: 1rem;
+    margin-top: 0.0rem;
+}
+
+p {
+    margin-bottom: 0rem;
+    line-height: 1.3;
+}
+
+code {
+    font-family: "SF Mono", monospace;
+    font-weight: bold;
+    font-size: 11pt;
+}
+
+.conflict {
+    background-color: #f9e2e2;
+}
+
+@media screen and (prefers-dark-interface) {
+    .conflict {
+        background-color: #462828;
+    }
+}
+
+.already-defined {
+    color: -apple-system-red;
+    font-size: smaller;
+}
+
+@media screen and (prefers-dark-interface) {
+    .already-defined {
+        color: -apple-system-red;
+    }
+}
+
+.already-defined .conflictor {
+    display: inline-block;
+    color: black;
+}
+
+@media screen and (prefers-dark-interface) {
+    .already-defined .conflictor {
+        color: text;
+    }
+}
+
+.already-defined .conflictor .conflictor-name {
+    color: black;
+    font-weight: bold;
+}
+
+@media screen and (prefers-dark-interface) {
+    .already-defined .conflictor .conflictor-name {
+        color: text;
+    }
+}
+
+.already-defined .conflictor .conflictor-id {
+    font-size: smaller;
+}
+
+.conflict-top {
+    background-color: #f9e2e2;
+    margin-bottom: 1rem;
+    display: flex;
+    padding: 2pt;
+    border-radius: 4pt;
+}
+
+@media screen and (prefers-dark-interface) {
+    .conflict-top {
+        background-color: #462828;
+    }
+}
+
+.conflict-top p {
+    font-weight: bold;
+    margin: 0;
+}
+
+/* TABLES SECTION */
+table {
+    table-layout: fixed;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.025);
+}
+
+@media screen and (prefers-dark-interface) {
+    table {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+}
+
+table td {
+    padding: 0.25rem 0;
+    vertical-align: top;
+}
+
+table td:first-child {
+    width: 120px;
+}
+
+table td.title {
+    border-spacing: 0pt 0pt;
+    padding-right: 10pt;
+    font-weight: bold;
+    white-space: normal;
+    text-align: left;
+}
+
+table td.pattern {
+    font-family: monospace;
+}
+
+table.items {
+    margin: 0.2rem 0;
+    border-spacing: 0pt 0pt;
+}
+
+table.items td {
+    vertical-align: top;
+    padding: 8px 10px;
+}
+
+table.items tr:not(:last-child) td {
+    border-bottom: 1px solid;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (prefers-dark-interface) {
+    table.items tr:not(:last-child) td {
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+table.items tr.items-conflict {
+    background-color: #f9e2e2;
+}
+
+@media screen and (prefers-dark-interface) {
+    table.items tr.items-conflict {
+        background-color: #462828;
+    }
+}
+
+table.attributes {
+    border-spacing: 0pt 0pt;
+    padding: 0.5rem 0;
+}
+
+table.attributes td {
+    border-top: none;
+    line-height: 1.5rem;
+    padding: 0 0.5rem;
+    white-space: nowrap;
+}
+
+table.attributes td:first-child {
+    border-right: 1px solid;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (prefers-dark-interface) {
+    table.attributes td:first-child {
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+table.attributes td:last-child {
+    border-left: 1px solid;
+    border-color: rgba(0, 0, 0, 0.1);
+    padding-right: 0;
+    white-space: normal;
+}
+
+@media screen and (prefers-dark-interface) {
+    table.attributes td:last-child {
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+table.column-header {
+    border-spacing: 0pt 0pt;
+    padding: 0.5rem 0;
+    margin-top: 0.25rem;
+    margin-left: 0;
+    text-indent: 0px;
+    background-color: rgba(0, 0, 0, 0.025);
+}
+
+@media screen and (prefers-dark-interface) {
+    table.column-header {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+}
+
+table.column-header tr td:first-child {
+    text-align: right;
+    color: graytext;
+    border-right: 1px solid;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (prefers-dark-interface) {
+    table.column-header tr td:first-child {
+        color: graytext;
+    }
+}
+
+@media screen and (prefers-dark-interface) {
+    table.column-header tr td:first-child {
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+table.column-header tr td:last-child {
+    padding-left: 0.5rem;
+}
+
+table.column-header td {
+    border: none;
+    padding-right: 0.5rem;
+}

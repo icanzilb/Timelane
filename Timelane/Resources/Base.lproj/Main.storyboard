@@ -19,7 +19,8 @@
                                         <menuItem title="About Timelane" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
+                                                <action selector="showAboutWindow:" target="Ady-hI-5gd" id="pZU-Eb-tir"/>
+                                                <segue destination="cQF-r3-B9X" kind="show" id="fPn-V7-KeQ"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
@@ -702,6 +703,109 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
+        <!--Window Controller-->
+        <scene sceneID="YfE-Eo-nXg">
+            <objects>
+                <windowController id="cQF-r3-B9X" sceneMemberID="viewController">
+                    <window key="window" title="About" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="BKo-6P-qHf">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" fullSizeContentView="YES"/>
+                        <rect key="contentRect" x="294" y="313" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+                        <connections>
+                            <outlet property="delegate" destination="cQF-r3-B9X" id="sX1-Wm-IO1"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="Gwx-FJ-FVW" kind="relationship" relationship="window.shadowedContentViewController" id="Byc-kV-GzF"/>
+                    </connections>
+                </windowController>
+                <customObject id="zoB-PY-zP6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="904" y="263"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="452-8G-bjc">
+            <objects>
+                <viewController storyboardIdentifier="AboutViewController" id="Gwx-FJ-FVW" customClass="AboutViewController" customModule="Timelane" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="JLV-FF-5wN">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NdU-HP-kKz">
+                                <rect key="frame" x="20" y="122" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="YCj-9s-hOl"/>
+                                    <constraint firstAttribute="height" constant="128" id="yzj-OP-nHX"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Icon" id="uAF-Ux-57K"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jxa-HD-oJf">
+                                <rect key="frame" x="44" y="98" width="80" height="23"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Timelane" id="uHf-B2-fMW">
+                                    <font key="font" metaFont="systemThin" size="20"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="er5-jD-bAf">
+                                <rect key="frame" x="168" y="20" width="292" height="230"/>
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="H0w-F6-jJQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="277" height="230"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView editable="NO" drawsBackground="NO" importsGraphics="NO" verticallyResizable="YES" selectionGranularity="word" allowsCharacterPickerTouchBarItem="NO" linkDetection="YES" textCompletion="NO" id="Yxn-IF-m7Q">
+                                            <rect key="frame" x="0.0" y="0.0" width="277" height="230"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="minSize" width="277" height="230"/>
+                                            <size key="maxSize" width="292" height="10000000"/>
+                                            <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        </textView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="kEQ-O4-Hms">
+                                    <rect key="frame" x="-100" y="-100" width="225" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="nR0-b0-L99">
+                                    <rect key="frame" x="277" y="0.0" width="15" height="230"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nbu-42-dub">
+                                <rect key="frame" x="39" y="63" width="91" height="15"/>
+                                <buttonCell key="cell" type="recessed" title="timelane.tools" bezelStyle="recessed" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="dyc-q7-Rc9">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="systemBold" size="12"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="openTimelaneTools:" target="Gwx-FJ-FVW" id="xpH-BP-EK6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="er5-jD-bAf" firstAttribute="top" secondItem="JLV-FF-5wN" secondAttribute="top" constant="20" id="3HS-De-Pd4"/>
+                            <constraint firstAttribute="bottom" secondItem="er5-jD-bAf" secondAttribute="bottom" constant="20" id="Bup-aV-fT1"/>
+                            <constraint firstItem="nbu-42-dub" firstAttribute="centerX" secondItem="jxa-HD-oJf" secondAttribute="centerX" id="GES-Op-HKz"/>
+                            <constraint firstItem="jxa-HD-oJf" firstAttribute="top" secondItem="NdU-HP-kKz" secondAttribute="bottom" constant="1" id="POg-DH-4qT"/>
+                            <constraint firstAttribute="trailing" secondItem="er5-jD-bAf" secondAttribute="trailing" constant="20" id="fQr-Be-sIh"/>
+                            <constraint firstItem="NdU-HP-kKz" firstAttribute="leading" secondItem="JLV-FF-5wN" secondAttribute="leading" constant="20" id="ifc-6V-kzl"/>
+                            <constraint firstItem="NdU-HP-kKz" firstAttribute="top" secondItem="JLV-FF-5wN" secondAttribute="top" constant="20" id="o6r-p0-lPE"/>
+                            <constraint firstItem="er5-jD-bAf" firstAttribute="leading" secondItem="NdU-HP-kKz" secondAttribute="trailing" constant="20" id="oKa-Ql-kPe"/>
+                            <constraint firstItem="nbu-42-dub" firstAttribute="top" secondItem="jxa-HD-oJf" secondAttribute="bottom" constant="20" id="r9U-iN-zcb"/>
+                            <constraint firstItem="jxa-HD-oJf" firstAttribute="centerX" secondItem="NdU-HP-kKz" secondAttribute="centerX" id="yL5-lm-B21"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="Yxn-IF-m7Q" id="3xO-nT-Kgd"/>
+                        <outlet property="timelaneLabel" destination="jxa-HD-oJf" id="Gn0-rT-2or"/>
+                    </connections>
+                </viewController>
+                <customObject id="pBk-Gg-tLO" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1511" y="257"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
@@ -901,7 +1005,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="320" id="QDG-8c-wIf"/>
                                                                 </constraints>
-                                                                <textFieldCell key="cell" title="More information at timelane.tools" id="RBE-SO-J2e">
+                                                                <textFieldCell key="cell" title="More information at http://timelane.tools" id="RBE-SO-J2e">
                                                                     <font key="font" usesAppearanceFont="YES"/>
                                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1023,11 +1127,23 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fCd-eC-cr2">
+                                <rect key="frame" x="402" y="13" width="114" height="15"/>
+                                <buttonCell key="cell" type="recessed" title="Textured Rounded" bezelStyle="recessed" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="Hx4-DZ-VWn">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="systemBold" size="12"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="openMore:" target="XfG-lQ-9wD" id="4oA-ak-PJU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="sL2-KR-hDy" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="200" id="34b-fy-WZu"/>
                             <constraint firstAttribute="bottom" secondItem="sL2-KR-hDy" secondAttribute="bottom" constant="40" id="5qZ-YH-vWL"/>
                             <constraint firstItem="BeS-6b-q1f" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="14" id="INs-1o-GSx"/>
+                            <constraint firstItem="fCd-eC-cr2" firstAttribute="centerX" secondItem="sL2-KR-hDy" secondAttribute="centerX" id="L3Z-nN-n9h"/>
+                            <constraint firstAttribute="bottom" secondItem="fCd-eC-cr2" secondAttribute="bottom" constant="13" id="TkT-02-o53"/>
                             <constraint firstItem="sL2-KR-hDy" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="WOX-Ja-Vg6"/>
                             <constraint firstItem="fHE-Bs-4wW" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="35" id="flx-93-s7r"/>
                             <constraint firstItem="BeS-6b-q1f" firstAttribute="bottom" secondItem="sL2-KR-hDy" secondAttribute="bottom" id="i7O-DY-XlC"/>
@@ -1042,6 +1158,7 @@
                         <outlet property="adView" destination="HpQ-U2-uGr" id="xIE-oI-cKR"/>
                         <outlet property="combineTextView" destination="43r-W2-mQR" id="IpQ-32-wIt"/>
                         <outlet property="instrumentIcon" destination="Xqj-dn-v3I" id="ZaS-MN-iwr"/>
+                        <outlet property="moreButton" destination="fCd-eC-cr2" id="T2Z-at-Vwq"/>
                         <outlet property="otherTextView" destination="Pgu-o6-y1C" id="F4B-sW-YDw"/>
                         <outlet property="tabView" destination="sL2-KR-hDy" id="eWN-I6-myT"/>
                         <outlet property="timelaneLabel" destination="y0S-Bb-Lhe" id="mca-TO-WR1"/>

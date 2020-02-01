@@ -13,7 +13,7 @@
     (if (eq ?instance__ FALSE) then (bind ?instance__ (create-modeler-instance)) (modify ?mod-inst-fact__ (instance ?instance__)) else (set-modeler-instance-to ?instance__))
     (assert (modeler-instance-binding (instance ?instance__) (rule 1)))
     (bind-output-table ?t0__)
-    (bind-input-table os-signpost (attribute subsystem "tools.timelane.subscriptions") (attribute target-pid $?target-pid) (attribute category subscriptions))
+    (bind-input-table os-signpost (attribute category subscriptions) (attribute target-pid $?target-pid) (attribute subsystem "tools.timelane.subscriptions"))
     (assert (modeler-instance-param (instance ?instance__) (name target-pid) (value ?target-pid)))
 )
 (defrule bootstrap-rule-1
@@ -51,7 +51,7 @@
     (if (eq ?instance__ FALSE) then (bind ?instance__ (create-modeler-instance)) (modify ?mod-inst-fact__ (instance ?instance__)) else (set-modeler-instance-to ?instance__))
     (assert (modeler-instance-binding (instance ?instance__) (rule 3)))
     (bind-output-table ?t0__)
-    (bind-input-table os-signpost (attribute subsystem "tools.timelane.subscriptions") (attribute target-pid $?target-pid) (attribute category subscriptions))
+    (bind-input-table os-signpost (attribute category subscriptions) (attribute target-pid $?target-pid) (attribute subsystem "tools.timelane.subscriptions"))
     (assert (modeler-instance-param (instance ?instance__) (name target-pid) (value ?target-pid)))
 )
 (defrule bootstrap-rule-3
@@ -89,7 +89,7 @@
     (if (eq ?instance__ FALSE) then (bind ?instance__ (create-modeler-instance)) (modify ?mod-inst-fact__ (instance ?instance__)) else (set-modeler-instance-to ?instance__))
     (assert (modeler-instance-binding (instance ?instance__) (rule 5)))
     (bind-output-table ?t0__)
-    (bind-input-table os-signpost (attribute category subscriptions) (attribute target-pid $?target-pid) (attribute subsystem "tools.timelane.subscriptions"))
+    (bind-input-table os-signpost (attribute target-pid $?target-pid) (attribute subsystem "tools.timelane.subscriptions") (attribute category subscriptions))
     (assert (modeler-instance-param (instance ?instance__) (name target-pid) (value ?target-pid)))
 )
 (defrule bootstrap-rule-5

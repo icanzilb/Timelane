@@ -20,6 +20,7 @@ class ViewController: NSViewController {
     @IBOutlet var otherTextView: NSTextField!
 
     @IBOutlet var moreButton: NSButton!
+    @IBOutlet var adContainer: NSView!
     
     var adController: AdController!
     var releases: Releases!
@@ -96,7 +97,7 @@ class ViewController: NSViewController {
         case "setup":
             if let update = latestRelease {
                 moreButton.isHidden = false
-                moreButton.title = "Download latest release: \(update.name) \(update.version)"
+                moreButton.title = "Download latest release: Version \(update.version) (\(update.name))"
                 moreURL = update.url
             } else {
                 moreButton.isHidden = true

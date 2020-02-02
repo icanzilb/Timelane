@@ -1155,6 +1155,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="adContainer" destination="BeS-6b-q1f" id="pbW-s3-OXF"/>
                         <outlet property="adView" destination="HpQ-U2-uGr" id="xIE-oI-cKR"/>
                         <outlet property="combineTextView" destination="43r-W2-mQR" id="IpQ-32-wIt"/>
                         <outlet property="instrumentIcon" destination="Xqj-dn-v3I" id="ZaS-MN-iwr"/>

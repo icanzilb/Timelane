@@ -1,3 +1,7 @@
+@media (prefers-color-scheme: dark) {
+    body { color: #efefef; }
+}
+
 h1, h2, p, li { font-family: "Helvetica Neue"; font-weight: normal; }
 p { margin: 0; padding: 0; }
 li { font-size: 14px; margin: 0; padding: 0; padding-top: 10px;}

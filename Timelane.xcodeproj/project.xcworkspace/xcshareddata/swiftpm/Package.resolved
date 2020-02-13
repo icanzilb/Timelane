@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "AppMover",
+        "repositoryURL": "https://github.com/icanzilb/AppMover",
+        "state": {
+          "branch": null,
+          "revision": "dc90ac087844ab05b6bd0f12ed10317372f40458",
+          "version": "1.1.0"
+        }
+      },
+      {
         "package": "Down",
         "repositoryURL": "https://github.com/iwasrobbed/Down",
         "state": {

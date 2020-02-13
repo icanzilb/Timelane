@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C0E61BE23F5EE9C00A9E063 /* AppMover in Frameworks */ = {isa = PBXBuildFile; productRef = 9C0E61BD23F5EE9C00A9E063 /* AppMover */; };
 		9C1C26DA23DDCC0600673570 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1C26D923DDCC0600673570 /* AppDelegate.swift */; };
 		9C1C26DC23DDCC0600673570 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1C26DB23DDCC0600673570 /* ViewController.swift */; };
 		9C1C26DE23DDCC0700673570 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C1C26DD23DDCC0700673570 /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C0E61BE23F5EE9C00A9E063 /* AppMover in Frameworks */,
 				9C1C26F823DDEB1B00673570 /* Down in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -52,12 +54,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C0E61B923F5ECCC00A9E063 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9C1C26CD23DDCC0600673570 = {
 			isa = PBXGroup;
 			children = (
 				9C1C26EA23DDD95600673570 /* InstrumentPackage */,
 				9C1C26D823DDCC0600673570 /* Timelane */,
 				9C1C26D723DDCC0600673570 /* Products */,
+				9C0E61B923F5ECCC00A9E063 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,6 +149,7 @@
 			name = Timelane;
 			packageProductDependencies = (
 				9C1C26F723DDEB1B00673570 /* Down */,
+				9C0E61BD23F5EE9C00A9E063 /* AppMover */,
 			);
 			productName = Timelane;
 			productReference = 9C1C26D623DDCC0600673570 /* Timelane.app */;
@@ -170,6 +181,7 @@
 			mainGroup = 9C1C26CD23DDCC0600673570;
 			packageReferences = (
 				9C1C26F623DDEB1B00673570 /* XCRemoteSwiftPackageReference "Down" */,
+				9C0E61BC23F5EE9C00A9E063 /* XCRemoteSwiftPackageReference "AppMover" */,
 			);
 			productRefGroup = 9C1C26D723DDCC0600673570 /* Products */;
 			projectDirPath = "";
@@ -407,6 +419,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9C0E61BC23F5EE9C00A9E063 /* XCRemoteSwiftPackageReference "AppMover" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/icanzilb/AppMover";
+			requirement = {
+				kind = exactVersion;
+				version = 1.1.0;
+			};
+		};
 		9C1C26F623DDEB1B00673570 /* XCRemoteSwiftPackageReference "Down" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/iwasrobbed/Down";
@@ -418,6 +438,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9C0E61BD23F5EE9C00A9E063 /* AppMover */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C0E61BC23F5EE9C00A9E063 /* XCRemoteSwiftPackageReference "AppMover" */;
+			productName = AppMover;
+		};
 		9C1C26F723DDEB1B00673570 /* Down */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9C1C26F623DDEB1B00673570 /* XCRemoteSwiftPackageReference "Down" */;

@@ -189,7 +189,7 @@
     (table-attribute (table-id ?autoOutput_) (has schema events-schema))
     (table (table-id ?autoOutput_) (side append))
     (os-signpost 
-            (category "subscriptions")
+            (category "DynamicStackTracing")
             (subsystem "tools.timelane.subscriptions")
             (time ?autoPointTimeBinding_&~0)
             (event-type "Event")
@@ -215,7 +215,7 @@
     (table-attribute (table-id ?autoOutput_) (has schema version-schema))
     (table (table-id ?autoOutput_) (side append))
     (os-signpost 
-            (category "subscriptions")
+            (category "DynamicStackTracing")
             (subsystem "tools.timelane.subscriptions")
             (time ?autoPointTimeBinding_&~0)
             (event-type "Event")

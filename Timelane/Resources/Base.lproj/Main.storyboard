@@ -783,6 +783,18 @@
                                     <action selector="openTimelaneTools:" target="Gwx-FJ-FVW" id="xpH-BP-EK6"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MJI-dS-nxe">
+                                <rect key="frame" x="53" y="40" width="62" height="15"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="recessed" title="@icanzilb" bezelStyle="recessed" alignment="center" state="on" imageScaling="proportionallyDown" inset="2" id="lYj-Fb-Mh8">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="systemBold" size="12"/>
+                                </buttonCell>
+                                <color key="contentTintColor" name="linkColor" catalog="System" colorSpace="catalog"/>
+                                <connections>
+                                    <action selector="openTwitter:" target="Gwx-FJ-FVW" id="pGv-MG-tJ4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="er5-jD-bAf" firstAttribute="top" secondItem="JLV-FF-5wN" secondAttribute="top" constant="20" id="3HS-De-Pd4"/>

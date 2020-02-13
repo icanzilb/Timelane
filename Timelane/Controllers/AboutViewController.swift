@@ -26,4 +26,8 @@ class AboutViewController: NSViewController {
     @IBAction func openTimelaneTools(_ sender: Any) {
         NSWorkspace.shared.open(URL(string: "http://timelane.tools")!)
     }
+
+    @IBAction func openTwitter(_ sender: Any) {
+        NSWorkspace.shared.open(URL(string: "https://twitter.com/icanzilb")!)
+    }
 }

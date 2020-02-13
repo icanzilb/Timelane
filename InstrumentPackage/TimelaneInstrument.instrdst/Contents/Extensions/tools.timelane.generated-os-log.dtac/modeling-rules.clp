@@ -54,7 +54,7 @@
         )
     )
     (os-signpost 
-        (category "subscriptions")
+        (category "DynamicStackTracing")
         (thread ?autoThreadBinding_)
         (time ?autoStartTimeBinding_&~0)
         (subsystem "tools.timelane.subscriptions")
@@ -69,7 +69,7 @@
 
     (bind ?autoLayoutCat_ (create$ global ?autoOutput_))
     (assert (open-start-interval 
-               (category "subscriptions")
+               (category "DynamicStackTracing")
                (thread ?autoThreadBinding_)
                (time ?autoStartTimeBinding_)
                (subsystem "tools.timelane.subscriptions")
@@ -91,7 +91,7 @@
         )
     )
     ?o <- (open-start-interval 
-                (category "subscriptions")
+                (category "DynamicStackTracing")
                 (thread ?autoThreadBinding_)
                 (time ?autoStartTimeBinding_)
                 (subsystem "tools.timelane.subscriptions")
@@ -110,7 +110,7 @@
         (message$ "completion:" ?completion ",error:###" ?error-message "###")
         (identifier ?autoSignpostIdentifier_)
         (name "subscriptions")
-        (category "subscriptions")
+        (category "DynamicStackTracing")
         (time ?autoEndTimeBinding_&~0)
     )
     (not (consumed-end (end-fact ?f) (output-table ?autoOutput_) (rule-system-serial 1)))
@@ -139,7 +139,7 @@
 (defrule RECORDER::speculation-for-system-1
     (speculate (event-horizon ?autoHorizonBinding_))
     (open-start-interval (output-table ?autoOutput_) (layout-id ?autoLayoutID_&~sentinel)
-                         (category "subscriptions")
+                         (category "DynamicStackTracing")
                          (thread ?autoThreadBinding_)
                          (time ?autoStartTimeBinding_)
                          (subsystem "tools.timelane.subscriptions")

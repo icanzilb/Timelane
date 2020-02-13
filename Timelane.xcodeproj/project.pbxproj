@@ -344,7 +344,7 @@
 				CODE_SIGN_ENTITLEMENTS = Timelane/Timelane.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 9MF8G8D9Y5;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Timelane/Info.plist;
@@ -353,7 +353,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 0.2;
+				MARKETING_VERSION = 0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.underplot.Timelane;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -367,7 +367,7 @@
 				CODE_SIGN_ENTITLEMENTS = Timelane/Timelane.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 9MF8G8D9Y5;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Timelane/Info.plist;
@@ -376,7 +376,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 0.2;
+				MARKETING_VERSION = 0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.underplot.Timelane;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

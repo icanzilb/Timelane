@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9C0E61BE23F5EE9C00A9E063 /* AppMover in Frameworks */ = {isa = PBXBuildFile; productRef = 9C0E61BD23F5EE9C00A9E063 /* AppMover */; };
 		9C1C26DA23DDCC0600673570 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1C26D923DDCC0600673570 /* AppDelegate.swift */; };
 		9C1C26DC23DDCC0600673570 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1C26DB23DDCC0600673570 /* ViewController.swift */; };
 		9C1C26DE23DDCC0700673570 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C1C26DD23DDCC0700673570 /* Assets.xcassets */; };
@@ -46,7 +45,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C0E61BE23F5EE9C00A9E063 /* AppMover in Frameworks */,
 				9C1C26F823DDEB1B00673570 /* Down in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,7 +147,6 @@
 			name = Timelane;
 			packageProductDependencies = (
 				9C1C26F723DDEB1B00673570 /* Down */,
-				9C0E61BD23F5EE9C00A9E063 /* AppMover */,
 			);
 			productName = Timelane;
 			productReference = 9C1C26D623DDCC0600673570 /* Timelane.app */;
@@ -181,7 +178,6 @@
 			mainGroup = 9C1C26CD23DDCC0600673570;
 			packageReferences = (
 				9C1C26F623DDEB1B00673570 /* XCRemoteSwiftPackageReference "Down" */,
-				9C0E61BC23F5EE9C00A9E063 /* XCRemoteSwiftPackageReference "AppMover" */,
 			);
 			productRefGroup = 9C1C26D723DDCC0600673570 /* Products */;
 			projectDirPath = "";
@@ -356,7 +352,7 @@
 				CODE_SIGN_ENTITLEMENTS = Timelane/Timelane.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 9MF8G8D9Y5;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Timelane/Info.plist;
@@ -379,7 +375,7 @@
 				CODE_SIGN_ENTITLEMENTS = Timelane/Timelane.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 9MF8G8D9Y5;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Timelane/Info.plist;
@@ -419,14 +415,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9C0E61BC23F5EE9C00A9E063 /* XCRemoteSwiftPackageReference "AppMover" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/icanzilb/AppMover";
-			requirement = {
-				kind = exactVersion;
-				version = 1.1.0;
-			};
-		};
 		9C1C26F623DDEB1B00673570 /* XCRemoteSwiftPackageReference "Down" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/iwasrobbed/Down";
@@ -438,11 +426,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9C0E61BD23F5EE9C00A9E063 /* AppMover */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9C0E61BC23F5EE9C00A9E063 /* XCRemoteSwiftPackageReference "AppMover" */;
-			productName = AppMover;
-		};
 		9C1C26F723DDEB1B00673570 /* Down */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9C1C26F623DDEB1B00673570 /* XCRemoteSwiftPackageReference "Down" */;

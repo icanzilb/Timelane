@@ -7,16 +7,9 @@
 //
 
 import Cocoa
-import AppMover
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-    func applicationWillFinishLaunching(_ notification: Notification) {
-        #if !DEBUG
-        AppMover.moveIfNecessary()
-        #endif
-    }
-    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
     }

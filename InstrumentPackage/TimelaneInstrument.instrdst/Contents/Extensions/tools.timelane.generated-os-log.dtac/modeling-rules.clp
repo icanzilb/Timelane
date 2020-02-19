@@ -229,8 +229,9 @@
     (create-new-row ?autoOutput_)
 
     (set-column timestamp ?autoPointTimeBinding_)
-    (set-column version-col ?version)
     (set-column version-color-col (switch ?version (case 1 then "Green")(default "Red")))
-    (set-column version-message-col (switch ?version (case 1 then "Correct Timelane client version")(default "Incorrect Timelane code client - expected Timelane protocol 1 but got a different version")))
+    (set-column version-message-col (switch ?version (case 1 then "Correct Timelane client version: 1")(default "Upgrade your Timelane client package from http://timelane.tools ! Expected Timelane protocol 1 but got a different version")))
+    (set-column client-version-col (switch ?version (case 1 then "🆗 Version 1")(default "⚠️ Upgrade Timelane")))
+    (set-column version-col ?version)
 )
 

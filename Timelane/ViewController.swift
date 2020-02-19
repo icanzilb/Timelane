@@ -99,6 +99,9 @@ class ViewController: NSViewController {
                 moreButton.isHidden = false
                 moreButton.title = "Download latest release: Version \(update.version) (\(update.name))"
                 moreURL = update.url
+                
+                // Show an alert as well
+                showUpdateDialogue(release: update)
             } else {
                 moreButton.isHidden = true
                 moreURL = nil
@@ -114,6 +117,25 @@ class ViewController: NSViewController {
         default:
             moreButton.isHidden = true
             moreURL = nil
+        }
+    }
+    
+    func showUpdateDialogue(release: Release) {
+        guard UserDefaults.standard.string(forKey: "skipVersion") != release.version.description else {
+            return
+        }
+        
+        let alert = NSAlert()
+        alert.messageText = "New Timelane release available!"
+        alert.informativeText = "Timelane \(release.version) (\"\(release.name)\") is available. Would you like to download it from GitHub now?"
+        alert.addButton(withTitle: "Download")
+        alert.addButton(withTitle: "Skip Version")
+        alert.alertStyle = .informational
+        
+        if alert.runModal() == .alertFirstButtonReturn {
+            NSWorkspace.shared.open(release.url)
+        } else {
+            UserDefaults.standard.set(release.version.description, forKey: "skipVersion")
         }
     }
     

@@ -686,9 +686,8 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Timelane" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="IQv-IB-iLA">
+                    <window key="window" title="Timelane" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" fullSizeContentView="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <connections>
@@ -764,11 +763,11 @@
                                         </textView>
                                     </subviews>
                                 </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="kEQ-O4-Hms">
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="kEQ-O4-Hms">
                                     <rect key="frame" x="-100" y="-100" width="225" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="nR0-b0-L99">
+                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="nR0-b0-L99">
                                     <rect key="frame" x="277" y="0.0" width="15" height="230"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -822,31 +821,31 @@
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController storyboardIdentifier="ViewController" id="XfG-lQ-9wD" customClass="ViewController" customModule="Timelane" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="738" height="420"/>
+                    <view key="view" misplaced="YES" id="m2S-Jp-Qdl">
+                        <rect key="frame" x="0.0" y="0.0" width="738" height="450"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <tabView translatesAutoresizingMaskIntoConstraints="NO" id="sL2-KR-hDy">
-                                <rect key="frame" x="193" y="30" width="532" height="376"/>
+                                <rect key="frame" x="193" y="30" width="532" height="406"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="360" id="uJh-0G-Whi"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="390" id="uJh-0G-Whi"/>
                                 </constraints>
                                 <font key="font" metaFont="system"/>
                                 <tabViewItems>
                                     <tabViewItem label="Setup" identifier="setup" id="ekU-1J-twJ">
                                         <view key="view" id="fw6-b7-lLb">
-                                            <rect key="frame" x="10" y="33" width="512" height="330"/>
+                                            <rect key="frame" x="10" y="33" width="512" height="360"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <gridView xPlacement="leading" yPlacement="bottom" rowAlignment="none" translatesAutoresizingMaskIntoConstraints="NO" id="iz3-eM-XDS">
-                                                    <rect key="frame" x="20" y="3" width="472" height="287"/>
+                                                    <rect key="frame" x="20" y="10" width="472" height="310"/>
                                                     <constraints>
                                                         <constraint firstItem="PF9-Yj-l6D" firstAttribute="width" secondItem="6Of-95-Zm5" secondAttribute="width" id="pYA-My-OYY"/>
                                                     </constraints>
                                                     <rows>
                                                         <gridRow height="88" id="5XC-sE-Y5p"/>
                                                         <gridRow height="91" id="P7K-Lf-leI"/>
-                                                        <gridRow height="68" id="gDp-eW-ceG"/>
+                                                        <gridRow height="91" id="gDp-eW-ceG"/>
                                                         <gridRow id="NUD-Hy-TOH"/>
                                                     </rows>
                                                     <columns>
@@ -857,7 +856,7 @@
                                                     <gridCells>
                                                         <gridCell row="5XC-sE-Y5p" column="SPo-QI-P84" xPlacement="center" yPlacement="top" id="G2F-yW-2Dt">
                                                             <button key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fgX-b1-ZA6">
-                                                                <rect key="frame" x="2" y="270" width="16" height="17"/>
+                                                                <rect key="frame" x="2" y="293" width="16" height="17"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="fgX-b1-ZA6" secondAttribute="height" id="WYi-jQ-fKR"/>
                                                                     <constraint firstAttribute="width" constant="16" id="l50-c8-gaV"/>
@@ -870,7 +869,7 @@
                                                         </gridCell>
                                                         <gridCell row="5XC-sE-Y5p" column="k2b-yQ-rgs" yPlacement="top" id="Kc9-MG-Icy">
                                                             <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6Of-95-Zm5">
-                                                                <rect key="frame" x="24" y="237" width="320" height="50"/>
+                                                                <rect key="frame" x="24" y="260" width="320" height="50"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="316" id="FEj-QX-taG"/>
                                                                     <constraint firstAttribute="height" constant="50" id="nbY-aB-rf9"/>
@@ -885,7 +884,7 @@
                                                         </gridCell>
                                                         <gridCell row="5XC-sE-Y5p" column="bEw-UG-cVD" xPlacement="center" yPlacement="top" id="Msp-FZ-tCq">
                                                             <button key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WoS-BC-Sy7">
-                                                                <rect key="frame" x="380" y="264" width="90" height="23"/>
+                                                                <rect key="frame" x="380" y="287" width="90" height="23"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="90" id="x1F-Wb-VQQ"/>
                                                                 </constraints>
@@ -900,7 +899,7 @@
                                                         </gridCell>
                                                         <gridCell row="P7K-Lf-leI" column="SPo-QI-P84" xPlacement="center" yPlacement="top" id="Wf1-Yf-Zpj">
                                                             <button key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ctl-m6-YZL">
-                                                                <rect key="frame" x="2" y="176" width="16" height="17"/>
+                                                                <rect key="frame" x="2" y="199" width="16" height="17"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="16" id="AGy-kQ-f01"/>
                                                                     <constraint firstAttribute="width" secondItem="Ctl-m6-YZL" secondAttribute="height" id="U6l-5u-QSw"/>
@@ -913,7 +912,7 @@
                                                         </gridCell>
                                                         <gridCell row="P7K-Lf-leI" column="k2b-yQ-rgs" yPlacement="top" id="IH3-Sf-tlK">
                                                             <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PF9-Yj-l6D">
-                                                                <rect key="frame" x="24" y="161" width="320" height="32"/>
+                                                                <rect key="frame" x="24" y="184" width="320" height="32"/>
                                                                 <textFieldCell key="cell" title="In order to use Timelane from within Xcode you need to install the Timelane Instrument." id="yBN-B2-hAP">
                                                                     <font key="font" usesAppearanceFont="YES"/>
                                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -923,7 +922,7 @@
                                                         </gridCell>
                                                         <gridCell row="P7K-Lf-leI" column="bEw-UG-cVD" xPlacement="center" yPlacement="top" id="f5r-a5-s8i">
                                                             <imageView key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xqj-dn-v3I">
-                                                                <rect key="frame" x="392" y="130" width="66" height="66"/>
+                                                                <rect key="frame" x="392" y="153" width="66" height="66"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="60" id="ll7-On-vkw"/>
                                                                     <constraint firstAttribute="width" secondItem="Xqj-dn-v3I" secondAttribute="height" id="tD7-cr-LF1"/>
@@ -933,7 +932,7 @@
                                                         </gridCell>
                                                         <gridCell row="gDp-eW-ceG" column="SPo-QI-P84" xPlacement="center" yPlacement="top" id="tWP-ES-M7X">
                                                             <button key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Zt8-Hl-0Lt">
-                                                                <rect key="frame" x="2" y="79" width="16" height="17"/>
+                                                                <rect key="frame" x="2" y="102" width="16" height="17"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="16" id="QYN-f4-GWh"/>
                                                                     <constraint firstAttribute="width" secondItem="Zt8-Hl-0Lt" secondAttribute="height" id="cD3-ve-aAD"/>
@@ -946,7 +945,7 @@
                                                         </gridCell>
                                                         <gridCell row="gDp-eW-ceG" column="k2b-yQ-rgs" yPlacement="top" id="4LI-2C-8Ft">
                                                             <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CWy-jV-frm">
-                                                                <rect key="frame" x="24" y="64" width="324" height="32"/>
+                                                                <rect key="frame" x="24" y="87" width="324" height="32"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="320" id="VrH-P2-5S9"/>
                                                                 </constraints>
@@ -959,10 +958,10 @@
                                                         </gridCell>
                                                         <gridCell row="gDp-eW-ceG" column="bEw-UG-cVD" xPlacement="center" yPlacement="top" id="hPG-yu-Syp">
                                                             <stackView key="contentView" distribution="fill" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cgd-bg-NO6">
-                                                                <rect key="frame" x="385" y="44" width="80" height="52"/>
+                                                                <rect key="frame" x="385" y="37" width="80" height="82"/>
                                                                 <subviews>
                                                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="86N-bY-ijC">
-                                                                        <rect key="frame" x="0.0" y="29" width="80" height="23"/>
+                                                                        <rect key="frame" x="0.0" y="59" width="80" height="23"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="80" id="MPd-j0-9Dj"/>
                                                                         </constraints>
@@ -972,6 +971,19 @@
                                                                         </buttonCell>
                                                                         <connections>
                                                                             <action selector="selectCombineTab:" target="XfG-lQ-9wD" id="CPe-8Q-zJx"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AX9-JI-tsF">
+                                                                        <rect key="frame" x="0.0" y="29" width="80" height="23"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="80" id="g1i-Im-P1Y"/>
+                                                                        </constraints>
+                                                                        <buttonCell key="cell" type="roundTextured" title="RxSwift" bezelStyle="texturedRounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="u6g-FO-rhk">
+                                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                            <font key="font" metaFont="system"/>
+                                                                        </buttonCell>
+                                                                        <connections>
+                                                                            <action selector="selectRxSwiftTab:" target="XfG-lQ-9wD" id="TWJ-BA-IZF"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MZJ-jy-rnJ">
@@ -991,8 +1003,10 @@
                                                                 <visibilityPriorities>
                                                                     <integer value="1000"/>
                                                                     <integer value="1000"/>
+                                                                    <integer value="1000"/>
                                                                 </visibilityPriorities>
                                                                 <customSpacing>
+                                                                    <real value="3.4028234663852886e+38"/>
                                                                     <real value="3.4028234663852886e+38"/>
                                                                     <real value="3.4028234663852886e+38"/>
                                                                 </customSpacing>
@@ -1050,12 +1064,12 @@
                                         </view>
                                     </tabViewItem>
                                     <tabViewItem label="Combine" identifier="combine" id="fum-gu-est">
-                                        <view key="view" id="hp7-hG-z7I">
+                                        <view key="view" misplaced="YES" id="hp7-hG-z7I">
                                             <rect key="frame" x="10" y="33" width="512" height="330"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="43r-W2-mQR">
-                                                    <rect key="frame" x="18" y="20" width="476" height="290"/>
+                                                    <rect key="frame" x="18" y="20" width="476" height="16"/>
                                                     <textFieldCell key="cell" selectable="YES" allowsUndo="NO" title="Multiline Label" allowsEditingTextAttributes="YES" id="yY4-sU-dnp">
                                                         <font key="font" usesAppearanceFont="YES"/>
                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1068,6 +1082,28 @@
                                                 <constraint firstAttribute="bottom" secondItem="43r-W2-mQR" secondAttribute="bottom" constant="20" id="dNB-6l-goy"/>
                                                 <constraint firstItem="43r-W2-mQR" firstAttribute="top" secondItem="hp7-hG-z7I" secondAttribute="top" constant="20" id="mXW-QF-ZYm"/>
                                                 <constraint firstItem="43r-W2-mQR" firstAttribute="leading" secondItem="hp7-hG-z7I" secondAttribute="leading" constant="20" id="nuO-NZ-DGB"/>
+                                            </constraints>
+                                        </view>
+                                    </tabViewItem>
+                                    <tabViewItem label="RxSwift" identifier="rxswift" id="tHS-vT-IuE">
+                                        <view key="view" misplaced="YES" id="yyJ-oS-78b">
+                                            <rect key="frame" x="10" y="33" width="512" height="330"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="seF-tI-RYj">
+                                                    <rect key="frame" x="18" y="20" width="476" height="16"/>
+                                                    <textFieldCell key="cell" selectable="YES" allowsUndo="NO" title="Multiline Label" allowsEditingTextAttributes="YES" id="EUY-Zs-gcq">
+                                                        <font key="font" usesAppearanceFont="YES"/>
+                                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="seF-tI-RYj" firstAttribute="top" secondItem="yyJ-oS-78b" secondAttribute="top" constant="20" id="BA8-iI-Pad"/>
+                                                <constraint firstItem="seF-tI-RYj" firstAttribute="leading" secondItem="yyJ-oS-78b" secondAttribute="leading" constant="20" id="SgE-pB-hCA"/>
+                                                <constraint firstAttribute="trailing" secondItem="seF-tI-RYj" secondAttribute="trailing" constant="20" id="iw6-1v-AFJ"/>
+                                                <constraint firstAttribute="bottom" secondItem="seF-tI-RYj" secondAttribute="bottom" constant="20" id="ooW-y5-v8w"/>
                                             </constraints>
                                         </view>
                                     </tabViewItem>
@@ -1124,7 +1160,7 @@
                                 </constraints>
                             </box>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fHE-Bs-4wW">
-                                <rect key="frame" x="35" y="252" width="128" height="128"/>
+                                <rect key="frame" x="35" y="282" width="128" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="ND1-Z1-m45"/>
                                     <constraint firstAttribute="width" constant="128" id="Vti-HR-j2k"/>
@@ -1132,9 +1168,9 @@
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Icon" id="2o6-p1-hb6"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="y0S-Bb-Lhe">
-                                <rect key="frame" x="39" y="221" width="120" height="37"/>
+                                <rect key="frame" x="43" y="254" width="113" height="34"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Timelane" id="C3T-Th-0JJ">
-                                    <font key="font" metaFont="systemThin" size="31"/>
+                                    <font key="font" metaFont="systemThin" size="29"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -1173,13 +1209,14 @@
                         <outlet property="instrumentIcon" destination="Xqj-dn-v3I" id="ZaS-MN-iwr"/>
                         <outlet property="moreButton" destination="fCd-eC-cr2" id="T2Z-at-Vwq"/>
                         <outlet property="otherTextView" destination="Pgu-o6-y1C" id="F4B-sW-YDw"/>
+                        <outlet property="rxSwiftTextView" destination="seF-tI-RYj" id="JkM-Fk-5gR"/>
                         <outlet property="tabView" destination="sL2-KR-hDy" id="eWN-I6-myT"/>
                         <outlet property="timelaneLabel" destination="y0S-Bb-Lhe" id="mca-TO-WR1"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133" y="733"/>
+            <point key="canvasLocation" x="133" y="746.5"/>
         </scene>
     </scenes>
     <resources>

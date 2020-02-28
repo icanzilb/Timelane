@@ -19,6 +19,7 @@ class AdController: NSObject {
     private let ads: [Ad] = [
         Ad(imageURL: Bundle.main.url(forResource: "combinebook", withExtension: "png")!, targetURL: URL(string: "http://underplot.com/book.php?combine")!),
         Ad(imageURL: Bundle.main.url(forResource: "rxbook", withExtension: "png")!, targetURL: URL(string: "http://underplot.com/book.php?rxswift")!),
+        Ad(imageURL: Bundle.main.url(forResource: "gcdbook", withExtension: "png")!, targetURL: URL(string: "http://underplot.com/book.php?gcd")!),
     ]
     
     private var currentAdIndex = 0
@@ -34,7 +35,8 @@ class AdController: NSObject {
     func setContext(_ context: String) {
         switch context {
         case "Combine": currentAdIndex = 0
-        case "Other": currentAdIndex = 1
+        case "Other": currentAdIndex = 2
+        case "RxSwift": currentAdIndex = 1
         default: currentAdIndex = 0
         }
         adView.image = NSImage(contentsOf: ads[currentAdIndex].imageURL)

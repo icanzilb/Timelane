@@ -17,6 +17,7 @@ class ViewController: NSViewController {
     @IBOutlet var timelaneLabel: NSTextField!
     
     @IBOutlet var combineTextView: NSTextField!
+    @IBOutlet var rxSwiftTextView: NSTextField!
     @IBOutlet var otherTextView: NSTextField!
 
     @IBOutlet var moreButton: NSButton!
@@ -30,6 +31,7 @@ class ViewController: NSViewController {
     let instrumentURL = Bundle.main.url(forResource: "TimelaneInstrument", withExtension: "instrdst")!
     let stylesURL = Bundle.main.url(forResource: "markdown/styles", withExtension: "css")!
     let combineTextURL = Bundle.main.url(forResource: "markdown/combine", withExtension: "markdown")!
+    let rxSwiftTextURL = Bundle.main.url(forResource: "markdown/rxSwift", withExtension: "markdown")!
     let otherTextURL = Bundle.main.url(forResource: "markdown/other", withExtension: "markdown")!
 
     override func viewDidLoad() {
@@ -47,10 +49,14 @@ class ViewController: NSViewController {
         let combineMarkdown = Down(markdownString: try! String(contentsOf: combineTextURL))
         combineTextView.attributedStringValue = try! combineMarkdown.toAttributedString(.hardBreaks, stylesheet: String(contentsOf: stylesURL))
         
+        let rxSwiftMarkdown = Down(markdownString: try! String(contentsOf: rxSwiftTextURL))
+        rxSwiftTextView.attributedStringValue = try! rxSwiftMarkdown.toAttributedString(.hardBreaks, stylesheet: String(contentsOf: stylesURL))
+        
         let otherMarkdown = Down(markdownString: try! String(contentsOf: otherTextURL))
         otherTextView.attributedStringValue = try! otherMarkdown.toAttributedString(.hardBreaks, stylesheet: String(contentsOf: stylesURL))
         
         tabView.delegate = self
+        tabView.selectTabViewItem(at: 0)
         
         updateMoreButton()
         
@@ -75,6 +81,14 @@ class ViewController: NSViewController {
         tabView.selectTabViewItem(at:
             tabView.tabViewItems.firstIndex { tabItem -> Bool in
                 return (tabItem.identifier as? String) == "combine"
+            }!
+        )
+    }
+
+    @IBAction func selectRxSwiftTab(_ sender: Any) {
+        tabView.selectTabViewItem(at:
+            tabView.tabViewItems.firstIndex { tabItem -> Bool in
+                return (tabItem.identifier as? String) == "rxswift"
             }!
         )
     }
@@ -110,6 +124,10 @@ class ViewController: NSViewController {
             moreButton.isHidden = false
             moreButton.title = "More at: https://github.com/icanzilb/TimelaneCombine"
             moreURL = URL(string: "https://github.com/icanzilb/TimelaneCombine")!
+        case "rxswift":
+            moreButton.isHidden = false
+            moreButton.title = "More at: https://github.com/icanzilb/RxTimelane"
+            moreURL = URL(string: "https://github.com/icanzilb/RxTimelane")!
         case "other":
             moreButton.isHidden = false
             moreButton.title = "More at: https://github.com/icanzilb/TimelaneCore"

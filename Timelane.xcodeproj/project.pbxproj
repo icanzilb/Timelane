@@ -20,6 +20,7 @@
 		9C3C6AFF23DE2F1400F3AAA8 /* about.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9C3C6AFE23DE2F1400F3AAA8 /* about.txt */; };
 		9C3C6B0123DE301A00F3AAA8 /* Releases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3C6B0023DE301A00F3AAA8 /* Releases.swift */; };
 		9CAA292523DE2B870029FCD2 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA292423DE2B870029FCD2 /* AboutViewController.swift */; };
+		9CFD3B2D2409186300AABADC /* gcdbook.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CFD3B2C2409186300AABADC /* gcdbook.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		9C3C6AFE23DE2F1400F3AAA8 /* about.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = about.txt; sourceTree = "<group>"; };
 		9C3C6B0023DE301A00F3AAA8 /* Releases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Releases.swift; sourceTree = "<group>"; };
 		9CAA292423DE2B870029FCD2 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		9CFD3B2C2409186300AABADC /* gcdbook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gcdbook.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			children = (
 				9C1C26F023DDDF3E00673570 /* combinebook.png */,
 				9C1C26F123DDDF3E00673570 /* rxbook.png */,
+				9CFD3B2C2409186300AABADC /* gcdbook.png */,
 			);
 			path = books;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				9C1C26E123DDCC0700673570 /* Main.storyboard in Resources */,
 				9C1C26F323DDDF3E00673570 /* rxbook.png in Resources */,
 				9C1C26FA23DDEC1000673570 /* markdown in Resources */,
+				9CFD3B2D2409186300AABADC /* gcdbook.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,7 +356,7 @@
 				CODE_SIGN_ENTITLEMENTS = Timelane/Timelane.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 9MF8G8D9Y5;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Timelane/Info.plist;
@@ -361,7 +365,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 0.9.2;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.underplot.Timelane;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -375,7 +379,7 @@
 				CODE_SIGN_ENTITLEMENTS = Timelane/Timelane.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 9MF8G8D9Y5;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Timelane/Info.plist;
@@ -384,7 +388,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 0.9.2;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.underplot.Timelane;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

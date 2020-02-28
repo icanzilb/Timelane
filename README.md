@@ -15,7 +15,7 @@ Click the package icon to install the Timelane Instrument:
 
 ![Timelane app window](etc/timelane-app-window.png)
 
-Then follow the instructions in the app or at [http://timelane.tools](timelane.tools) to get started profiling your asynchronous code.
+Then follow the instructions in the app or at [timelane.tools](http://timelane.tools) to get started profiling your asynchronous code.
 
 # Demo
 

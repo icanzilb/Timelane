@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<package>
+    <!--
+        github: https://github.com/icanzilb/TimelaneInstrument
+        www: http://timelane.tools
+        twitter: https://twitter.com/icanzilb
+    
+        Package meta information below
+    -->
+    
+    <id>tools.timelane</id>
+    
+    <!-- This version should match the client protocol version to guarantee the plotted results are correct -->
+    <version>1</version>
+    <title>Timelane Tools</title>
+    <owner>
+        <name>Marin Todorov</name>
+    </owner>
+    
+    <import-schema>os-log</import-schema>
+    
+    <!--
+        This is the schema that receives subscriptions data:
+            - "subscribe:..." to begin a subscription lane
+            - "completion:..." to end a subscription lane with status "Cancelled", "Error", or "Completed"
+    -->
+    <os-signpost-interval-schema>
+        <id>subscriptions-schema</id>
+        <title>Subscriptions schema</title>
+        
+        <subsystem>"tools.timelane.subscriptions"</subsystem>
+        <category>"DynamicStackTracing"</category>
+        <name>"subscriptions"</name>
+        
+        <start-pattern>
+            <message>"subscribe:" ?subscription-name "###source:" ?source "###id:" ?subscription-id</message>
+        </start-pattern>
+        <end-pattern>
+            <message>"completion:" ?completion ",error:###" ?error-message "###"</message>
+        </end-pattern>
+        
+        <start-column>
+            <mnemonic>span-start</mnemonic>
+            <title>Started at</title>
+            <type>start-time</type>
+        </start-column>
+        
+        <duration-column>
+            <mnemonic>span-duration</mnemonic>
+            <title>Duration</title>
+            <type>duration</type>
+        </duration-column>
+
+        <primary-column>
+            <mnemonic>span-name-col</mnemonic>
+            <title>Name</title>
+            <type>string</type>
+            <expression>?subscription-name</expression>
+        </primary-column>
+
+        <column>
+            <mnemonic>completion-col</mnemonic>
+            <title>Completion</title>
+            <type>uint32</type>
+            <expression>?completion</expression>
+        </column>
+        
+        <column>
+            <mnemonic>subscription-id-col</mnemonic>
+            <title>Subscription ID</title>
+            <type>uint32</type>
+            <expression>?subscription-id</expression>
+        </column>
+        
+        <column>
+            <mnemonic>source-col</mnemonic>
+            <title>Source</title>
+            <type>string</type>
+            <expression>?source</expression>
+        </column>
+                
+        <column>
+            <mnemonic>status-color-col</mnemonic>
+            <title>Color</title>
+            <type>event-concept</type>
+            <expression>(switch ?completion (case 1 then "Orange")(case 2 then "Red")(default "Blue"))</expression>
+        </column>
+        
+        <column>
+            <mnemonic>status-name-col</mnemonic>
+            <title>Status</title>
+            <type>string</type>
+            <expression>(switch ?completion (case 1 then "Cancelled")(case 2 then (str-cat "Error(" ?error-message ")"))(default "Completed"))</expression>
+        </column>
+
+        <column>
+            <mnemonic>countable-col</mnemonic>
+            <title>Count</title>
+            <type>uint32</type>
+            <expression>(+ 1 0)</expression>
+        </column>
+        
+        <open-interval-template>
+            
+            <mnemonic>source-col</mnemonic>
+            <expression>?source</expression>
+            
+            <mnemonic>span-name-col</mnemonic>
+            <expression>?subscription-name</expression>
+
+            <mnemonic>status-name-col</mnemonic>
+            <expression>(if (not (not ?source)) then "Active")</expression>
+            
+            <mnemonic>status-color-col</mnemonic>
+            <expression>(if (not (not ?source)) then "Green")</expression>
+            
+            <mnemonic>countable-col</mnemonic>
+            <expression>(+ 1 0)</expression>
+            
+        </open-interval-template>
+        
+    </os-signpost-interval-schema>
+    
+    <!--
+        This is the schema that receives events data:
+            - "subscription:..." plots all possible events "Error", "Output", and "Completed"
+    -->
+    <os-signpost-point-schema>
+        <id>events-schema</id>
+        <title>Events schema</title>
+        <subsystem>"tools.timelane.subscriptions"</subsystem>
+        <category>"DynamicStackTracing"</category>
+        <name>"subscriptions"</name>
+        
+        <pattern>
+            <message>"subscription:" ?subscription "###type:" ?event-type "###value:" ?value "###source:" ?source "###id:" ?subscription-id</message>
+        </pattern>
+
+        <timestamp-column>
+            <mnemonic>event-time-col</mnemonic>
+            <title>Time</title>
+            <type>event-time</type>
+        </timestamp-column>
+
+        <primary-column>
+            <mnemonic>subscription-col</mnemonic>
+            <title>Subscription</title>
+            <type>string</type>
+            <expression>?subscription</expression>
+        </primary-column>
+
+        <column>
+            <mnemonic>value-col</mnemonic>
+            <title>Value</title>
+            <type>string</type>
+            <expression>(switch ?event-type (case "Completed" then "Done.")(default ?value))</expression>
+        </column>
+
+        <column>
+            <mnemonic>source-col</mnemonic>
+            <title>Call site</title>
+            <type>string</type>
+            <expression>?source</expression>
+        </column>
+        
+        <column>
+            <mnemonic>subscription-id-col</mnemonic>
+            <title>Subscription ID</title>
+            <type>uint32</type>
+            <expression>?subscription-id</expression>
+        </column>
+
+        <column>
+            <mnemonic>event-type-col</mnemonic>
+            <title>Event type</title>
+            <type>event-concept</type>
+            <expression>?event-type</expression>
+        </column>
+        
+        <column>
+            <mnemonic>event-color-col</mnemonic>
+            <title>Color</title>
+            <type>event-concept</type>
+            <expression>(switch ?event-type (case "Error" then "Red")(case "Output" then "Blue")(case "Completed" then "Green")(default "Grey"))</expression>
+        </column>
+    
+    </os-signpost-point-schema>
+    
+    <!--
+        This is the schema that receives versioning data:
+            - "version:..." receives the client protocol version and plots an Instrument lane telling the user
+                if the instrument and client versions match.
+    -->
+    <os-signpost-point-schema>
+        <id>version-schema</id>
+        <title>Version schema</title>
+        <subsystem>"tools.timelane.subscriptions"</subsystem>
+        <category>"DynamicStackTracing"</category>
+        <name>"subscriptions"</name>
+        
+        <pattern>
+            <message>"version:" ?version</message>
+        </pattern>
+
+        <primary-column>
+            <mnemonic>version-col</mnemonic>
+            <title>Version</title>
+            <type>byte</type>
+            <expression>?version</expression>
+        </primary-column>
+
+        <column>
+            <mnemonic>version-message-col</mnemonic>
+            <title>Version Message</title>
+            <type>string</type>
+            <expression>(switch ?version (case 1 then "Correct Timelane client version: 1")(default "Upgrade your Timelane client package from http://timelane.tools ! Expected Timelane protocol 1 but got a different version"))</expression>
+        </column>
+
+        <column>
+            <mnemonic>version-color-col</mnemonic>
+            <title>Color</title>
+            <type>event-concept</type>
+            <expression>(switch ?version (case 1 then "Green")(default "Red"))</expression>
+        </column>
+
+        <column>
+            <mnemonic>client-version-col</mnemonic>
+            <title>Client Version Label</title>
+            <type>string</type>
+            <expression>(switch ?version (case 1 then "🆗 Version 1")(default "⚠️ Upgrade Timelane"))</expression>
+        </column>
+
+        
+    </os-signpost-point-schema>
+    
+    <!--
+        The subscriptions instrument.
+    -->
+    <instrument>
+        <id>tools.timelane.Subscriptions</id>
+        <title>Subscriptions</title>
+        <category>Behavior</category>
+        <purpose>Visualizes asynchronous subscription data</purpose>
+        <icon>Dispatch</icon>
+        
+        <!-- The data table storing subscription data -->
+        <create-table>
+            <id>subscriptions-table</id>
+            <schema-ref>subscriptions-schema</schema-ref>
+        </create-table>
+        
+        <!-- Plots lanes grouped by the subscription name representing a subscription's lifespan -->
+        <graph>
+            <title>Subscriptions</title>
+            <lane>
+                <title>Lifetime</title>
+                <table-ref>subscriptions-table</table-ref>
+                <plot-template>
+                    <instance-by>span-name-col</instance-by>
+                    <label-format>%s</label-format>
+                    <value-from>span-name-col</value-from>
+                    <color-from>status-color-col</color-from>
+                    <label-from>status-name-col</label-from>
+                    <qualified-by>layout-qualifier</qualified-by>
+                </plot-template>
+            </lane>
+        </graph>
+
+        <!-- Shows a list of all subscriptions with their names, status, start time, and duration -->
+        <list>
+            <title>All Subscriptions</title>
+            <table-ref>subscriptions-table</table-ref>
+            <column>span-start</column>
+            <column>span-duration</column>
+            <column>span-name-col</column>
+            <column>status-name-col</column>
+            <column>source-col</column>
+        </list>
+
+        <!-- Displays subscription aggregation by their name and status -->
+        <aggregation>
+            <title>Subscriptions by Name</title>
+            <table-ref>subscriptions-table</table-ref>
+            
+            <empty-content-suggestion>Wait until there are subscriptions to inspect.</empty-content-suggestion>
+            
+            <hierarchy>
+                <level>
+                    <column>span-name-col</column>
+                </level>
+                <level>
+                    <column>status-name-col</column>
+                </level>
+            </hierarchy>
+            
+            <visit-on-focus>All Subscriptions</visit-on-focus>
+            
+            <column>
+              <sum>countable-col</sum>
+            </column>
+            
+            <column>
+              <min>span-duration</min>
+            </column>
+            <column>
+              <average>span-duration</average>
+            </column>
+            <column>
+              <max>span-duration</max>
+            </column>
+        </aggregation>
+
+        <!-- Displays active subscription aggregation -->
+        <aggregation>
+            <title>Active Subscriptions</title>
+            <table-ref>subscriptions-table</table-ref>
+            
+            <slice>
+                <column>status-name-col</column>
+                <equals><string>Active</string></equals>
+            </slice>
+            
+            <empty-content-suggestion>Wait until there are active subscriptions to inspect.</empty-content-suggestion>
+            
+            <hierarchy>
+                <level>
+                    <column>span-name-col</column>
+                </level>
+            </hierarchy>
+            
+            <visit-on-focus>All Subscriptions</visit-on-focus>
+            
+            <column>
+              <sum>countable-col</sum>
+            </column>
+            
+            <column>
+              <min>span-duration</min>
+            </column>
+            <column>
+              <average>span-duration</average>
+            </column>
+            <column>
+              <max>span-duration</max>
+            </column>
+        </aggregation>
+
+        <!-- Displays failed subscription aggregation -->
+        <aggregation>
+            <title>Failed Subscriptions</title>
+            <table-ref>subscriptions-table</table-ref>
+            
+            <slice>
+                <column>completion-col</column>
+                <equals><uint32>2</uint32></equals>
+            </slice>
+            
+            <empty-content-suggestion>Wait until there are failed subscriptions to inspect.</empty-content-suggestion>
+            
+            <hierarchy>
+                <level>
+                    <column>span-name-col</column>
+                </level>
+            </hierarchy>
+            
+            <visit-on-focus>All Subscriptions</visit-on-focus>
+            
+            <column>
+              <sum>countable-col</sum>
+            </column>
+            
+            <column>
+              <min>span-duration</min>
+            </column>
+            <column>
+              <average>span-duration</average>
+            </column>
+            <column>
+              <max>span-duration</max>
+            </column>
+        </aggregation>
+
+        <!-- Displays cancelled subscription aggregation -->
+        <aggregation>
+            <title>Cancelled Subscriptions</title>
+            <table-ref>subscriptions-table</table-ref>
+            
+            <slice>
+                <column>completion-col</column>
+                <equals><uint32>1</uint32></equals>
+            </slice>
+            
+            <empty-content-suggestion>Wait until there are cancelled subscriptions to inspect.</empty-content-suggestion>
+            
+            <hierarchy>
+                <level>
+                    <column>span-name-col</column>
+                </level>
+            </hierarchy>
+            
+            <visit-on-focus>All Subscriptions</visit-on-focus>
+            
+            <column>
+              <sum>countable-col</sum>
+            </column>
+            
+            <column>
+              <min>span-duration</min>
+            </column>
+            <column>
+              <average>span-duration</average>
+            </column>
+            <column>
+              <max>span-duration</max>
+            </column>
+        </aggregation>
+        
+        <!-- A view showing the active subscriptions -->
+        <time-slice>
+            <title>Active Subscriptions at Playhead</title>
+            <table-ref>subscriptions-table</table-ref>
+            <visit-on-focus>All Subscriptions</visit-on-focus>
+
+            <column>span-start</column>
+            <column>span-duration</column>
+            <column>span-name-col</column>
+        </time-slice>
+    </instrument>
+
+    <!--
+        The events over time instrument.
+    -->
+    <instrument>
+        <id>tools.timelane.EventsOverTime</id>
+        <title>Events Over Time</title>
+        <category>Behavior</category>
+        <purpose>Visualizes events over time</purpose>
+        <icon>Points of Interest</icon>
+        
+        <!-- The data table storing events data -->
+        <create-table>
+            <id>events-table</id>
+            <schema-ref>events-schema</schema-ref>
+        </create-table>
+
+        <!--
+            Plots a timelane with points of interest (aka events over time)
+        -->
+        <graph>
+            <title>Events</title>
+            <lane>
+                <title>Events</title>
+                <table-ref>events-table</table-ref>
+                <plot-template>
+                    <instance-by>subscription-col</instance-by>
+                    <label-format>%s</label-format>
+                    <value-from>value-col</value-from>
+                    <color-from>event-color-col</color-from>
+                </plot-template>
+            </lane>
+        </graph>
+
+        <!--
+            The list of events received
+        -->
+        <list>
+            <title>All Events</title>
+            <table-ref>events-table</table-ref>
+            <column>event-time-col</column>
+            <column>subscription-col</column>
+            <column>event-type-col</column>
+            <column>value-col</column>
+            <column>source-col</column>
+        </list>
+
+        <!--
+            Agregated view of the events
+        -->
+        <aggregation>
+            <title>All Events by Subscription</title>
+            <table-ref>events-table</table-ref>
+            
+            <empty-content-suggestion>Wait until there are subscriptions output values to inspect.</empty-content-suggestion>
+            
+            <hierarchy>
+                <level>
+                    <column>subscription-col</column>
+                </level>
+            </hierarchy>
+            
+            <visit-on-focus>All Events</visit-on-focus>
+            
+            <column>
+              <choose-any>subscription-col</choose-any>
+            </column>
+        </aggregation>
+    </instrument>
+
+    <!--
+        The version instrument
+    -->
+    <instrument>
+        <id>tools.timelane.Version</id>
+        <title>Version</title>
+        <category>Behavior</category>
+        <purpose>Verifies the Timelane client version</purpose>
+        <icon>Generic</icon>
+        
+        <!-- The version data table -->
+        <create-table>
+            <id>version-table</id>
+            <schema-ref>version-schema</schema-ref>
+        </create-table>
+
+        <!--
+            Plots a version lane
+        -->
+        <graph>
+            <title>Version</title>
+            <lane>
+                <title>Version</title>
+                <table-ref>version-table</table-ref>
+                <plot-template>
+                    <instance-by>client-version-col</instance-by>
+                    <label-format>%s</label-format>
+                    <value-from>version-message-col</value-from>
+                    <color-from>version-color-col</color-from>
+                </plot-template>
+            </lane>
+        </graph>
+        
+        <!--
+            Text based information about version matching with the client library
+        -->
+        <narrative>
+          <title>Version</title>
+          <table-ref>version-table</table-ref>
+          <narrative-column>client-version-col</narrative-column>
+          <annotation-column>version-message-col</annotation-column>
+        </narrative>
+    </instrument>
+    
+    <!--
+        The predefined Timelane template containing the Subscriptions, Events, and Version instrument lanes.
+    -->
+    <template>
+        <import-from-file>Timelane.tracetemplate</import-from-file>
+    </template>
+</package>

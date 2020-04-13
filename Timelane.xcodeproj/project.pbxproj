@@ -26,8 +26,10 @@
 		9C25F022241E5CD0004AAA35 /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C25F021241E5CD0004AAA35 /* Worker.swift */; };
 		9C25F029241E5D6A004AAA35 /* TimelaneCombine in Frameworks */ = {isa = PBXBuildFile; productRef = 9C25F028241E5D6A004AAA35 /* TimelaneCombine */; };
 		9C3C6AFF23DE2F1400F3AAA8 /* about.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9C3C6AFE23DE2F1400F3AAA8 /* about.txt */; };
-		9C3C6B0123DE301A00F3AAA8 /* Releases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3C6B0023DE301A00F3AAA8 /* Releases.swift */; };
+		9C4FA1B52441E8CE00064D08 /* AppMover in Frameworks */ = {isa = PBXBuildFile; productRef = 9C4FA1B42441E8CE00064D08 /* AppMover */; };
 		9CAA292523DE2B870029FCD2 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA292423DE2B870029FCD2 /* AboutViewController.swift */; };
+		9CED3DDD2444E00200719205 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CED3DDC2444E00200719205 /* Sparkle.framework */; };
+		9CED3DDF2444E09000719205 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9CED3DDC2444E00200719205 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9CFD3B2D2409186300AABADC /* gcdbook.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CFD3B2C2409186300AABADC /* gcdbook.png */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +42,19 @@
 			remoteInfo = TimelaneInstrument;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9CED3DDE2444E07F00719205 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9CED3DDF2444E09000719205 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9C1C26D623DDCC0600673570 /* Timelane.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timelane.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,8 +79,8 @@
 		9C25F01D241E5CA7004AAA35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C25F021241E5CD0004AAA35 /* Worker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
 		9C3C6AFE23DE2F1400F3AAA8 /* about.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = about.txt; sourceTree = "<group>"; };
-		9C3C6B0023DE301A00F3AAA8 /* Releases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Releases.swift; sourceTree = "<group>"; };
 		9CAA292423DE2B870029FCD2 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		9CED3DDC2444E00200719205 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Timelane/Vendor/Sparkle/Sparkle.framework; sourceTree = "<group>"; };
 		9CFD3B2C2409186300AABADC /* gcdbook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gcdbook.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C4FA1B52441E8CE00064D08 /* AppMover in Frameworks */,
+				9CED3DDD2444E00200719205 /* Sparkle.framework in Frameworks */,
 				9C1C26F823DDEB1B00673570 /* Down in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,6 +109,7 @@
 		9C0E61B923F5ECCC00A9E063 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9CED3DDC2444E00200719205 /* Sparkle.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -124,7 +142,6 @@
 				9C1C26E923DDD94D00673570 /* Resources */,
 				9C1C26D923DDCC0600673570 /* AppDelegate.swift */,
 				9C1C26DB23DDCC0600673570 /* ViewController.swift */,
-				9C3C6B0023DE301A00F3AAA8 /* Releases.swift */,
 				9C1C26E223DDCC0700673570 /* Info.plist */,
 				9C1C26E323DDCC0700673570 /* Timelane.entitlements */,
 			);
@@ -202,6 +219,7 @@
 				9C1C26D223DDCC0600673570 /* Sources */,
 				9C1C26D323DDCC0600673570 /* Frameworks */,
 				9C1C26D423DDCC0600673570 /* Resources */,
+				9CED3DDE2444E07F00719205 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -211,6 +229,7 @@
 			name = Timelane;
 			packageProductDependencies = (
 				9C1C26F723DDEB1B00673570 /* Down */,
+				9C4FA1B42441E8CE00064D08 /* AppMover */,
 			);
 			productName = Timelane;
 			productReference = 9C1C26D623DDCC0600673570 /* Timelane.app */;
@@ -284,6 +303,7 @@
 			packageReferences = (
 				9C1C26F623DDEB1B00673570 /* XCRemoteSwiftPackageReference "Down" */,
 				9C25F027241E5D6A004AAA35 /* XCRemoteSwiftPackageReference "TimelaneCombine" */,
+				9C4FA1B32441E8CE00064D08 /* XCRemoteSwiftPackageReference "AppMover" */,
 			);
 			productRefGroup = 9C1C26D723DDCC0600673570 /* Products */;
 			projectDirPath = "";
@@ -329,7 +349,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C3C6B0123DE301A00F3AAA8 /* Releases.swift in Sources */,
 				9C1C26DC23DDCC0600673570 /* ViewController.swift in Sources */,
 				9C1C26EE23DDDC8B00673570 /* AdController.swift in Sources */,
 				9CAA292523DE2B870029FCD2 /* AboutViewController.swift in Sources */,
@@ -513,16 +532,21 @@
 				CODE_SIGN_ENTITLEMENTS = Timelane/Timelane.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 0.9;
 				DEVELOPMENT_TEAM = 9MF8G8D9Y5;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Timelane/Vendor/Sparkle",
+				);
 				INFOPLIST_FILE = Timelane/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.underplot.Timelane;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -536,16 +560,21 @@
 				CODE_SIGN_ENTITLEMENTS = Timelane/Timelane.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 0.9;
 				DEVELOPMENT_TEAM = 9MF8G8D9Y5;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Timelane/Vendor/Sparkle",
+				);
 				INFOPLIST_FILE = Timelane/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.underplot.Timelane;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -675,6 +704,14 @@
 				minimumVersion = 1.0.4;
 			};
 		};
+		9C4FA1B32441E8CE00064D08 /* XCRemoteSwiftPackageReference "AppMover" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/icanzilb/AppMover";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -687,6 +724,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9C25F027241E5D6A004AAA35 /* XCRemoteSwiftPackageReference "TimelaneCombine" */;
 			productName = TimelaneCombine;
+		};
+		9C4FA1B42441E8CE00064D08 /* AppMover */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C4FA1B32441E8CE00064D08 /* XCRemoteSwiftPackageReference "AppMover" */;
+			productName = AppMover;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -5,13 +5,19 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
-            <title>v1.0.0</title>
-            <sparkle:releaseNotesLink>
-                https://github.com/icanzilb/Timelane/releases/tag/1.0.0
-            </sparkle:releaseNotesLink>
+            <title>Version 1.0</title>
+            <description><![CDATA[
+                <h2>New Features</h2>
+                <p>
+                  <li>Suggests to move app to /Applications folder</li>
+                  <li>Automatically updates to latest available version</li>
+                </p>
+            ]]>
             <pubDate>Fri, 28 Feb 2020 19:20:11 +0000</pubDate>
-            <!-- Sparkle 1.21+ uses sparkle::edSignature="ed25519" instead of sparkle::dsaSignature="deprecated DSA" -->
-            <enclosure url="http://you.com/app/Your%20Great%20App%202.0.zip" sparkle:version="2.0" length="1623481" type="application/octet-stream" sparkle:dsaSignature="BAFJW4B6B1K1JyW30nbkBwainOzrN6EQuAh" />
+            <enclosure url="https://github.com/icanzilb/Timelane/releases/download/1.0.0/Timelane.app-1.0.0.zip" 
+                       sparkle:version="1.0"
+                       sparkle:edSignature="am3Vw36FBD/Cw6jwc3WPBt0OxdSkZ+R5AJE70gABikmCeopiGO1IhtJl28jtEp6YFOQ39q2/7+FtYqig4iJDDw==" length="4631881"
+                       type="application/octet-stream" />
             <sparkle:minimumSystemVersion>10.14</sparkle:minimumSystemVersion>
         </item>
     </channel>

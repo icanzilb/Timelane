@@ -12,7 +12,7 @@
                   <li>Suggests to move app to /Applications folder</li>
                   <li>Automatically updates to latest available version</li>
                 </p>
-            ]]>
+            ]]></description>
             <pubDate>Fri, 28 Feb 2020 19:20:11 +0000</pubDate>
             <enclosure url="https://github.com/icanzilb/Timelane/releases/download/1.0.0/Timelane.app-1.0.0.zip" 
                        sparkle:version="1.0"

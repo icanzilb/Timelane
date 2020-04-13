@@ -18,9 +18,9 @@
                 </p>
             ]]></description>
             <pubDate>Mon, 13 Apr 2020 19:20:11 +0000</pubDate>
-            <enclosure url="https://github.com/icanzilb/Timelane/releases/download/1.1/Timelane.app-1.1.zip" 
-                       sparkle:version="1.1"
-                       sparkle:edSignature="y5agNe8Fz/fJwFJiepL5Y0xsR898QJzxOFgC1JxZYpmXaBuiV/+Crw193i5QPW9R0DVSuCgosRJG5EmcFGSqCQ==" length="4631954"
+            <enclosure url="https://github.com/icanzilb/Timelane/releases/download/1.2/Timelane.app-1.2.zip" 
+                       sparkle:version="1.2"
+                       sparkle:edSignature="Bi0wDt8f7JO722apQnRGhgGYb3+srTRZ7nhuwkJNqxRPgKmN82KbHisQ8WfsuRMao6o17Zg7okr0IMXJ4IfICg==" length="6356690"
                        type="application/octet-stream" />
             <sparkle:minimumSystemVersion>10.14</sparkle:minimumSystemVersion>
         </item>

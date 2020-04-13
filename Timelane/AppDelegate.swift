@@ -15,6 +15,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let updater = SUUpdater()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        if let _ = ProcessInfo.processInfo.environment["RESET_USERDEFAULTS"] {
+            UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+        }
+        
         // Insert code here to initialize your application
         #if !DEBUG
         AppMover.moveIfNecessary()

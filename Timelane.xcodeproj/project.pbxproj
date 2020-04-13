@@ -513,7 +513,7 @@
 				CODE_SIGN_ENTITLEMENTS = Timelane/Timelane.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_TEAM = 9MF8G8D9Y5;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Timelane/Info.plist;
@@ -522,7 +522,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.underplot.Timelane;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -536,7 +536,7 @@
 				CODE_SIGN_ENTITLEMENTS = Timelane/Timelane.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 1.1;
 				DEVELOPMENT_TEAM = 9MF8G8D9Y5;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Timelane/Info.plist;
@@ -545,7 +545,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.underplot.Timelane;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -560,6 +560,7 @@
 				DEVELOPMENT_TEAM = 9MF8G8D9Y5;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Instruments/Packages";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "";
 			};
 			name = Debug;
@@ -572,6 +573,7 @@
 				DEVELOPMENT_TEAM = 9MF8G8D9Y5;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Instruments/Packages";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "";
 			};
 			name = Release;
@@ -591,6 +593,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.underplot.TestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -611,6 +614,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.underplot.TestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

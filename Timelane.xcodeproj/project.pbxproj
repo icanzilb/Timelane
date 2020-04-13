@@ -589,6 +589,7 @@
 				DEVELOPMENT_TEAM = 9MF8G8D9Y5;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Instruments/Packages";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "";
 			};
 			name = Debug;
@@ -601,6 +602,7 @@
 				DEVELOPMENT_TEAM = 9MF8G8D9Y5;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Instruments/Packages";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "";
 			};
 			name = Release;
@@ -620,6 +622,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.underplot.TestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -640,6 +643,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.underplot.TestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

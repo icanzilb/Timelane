@@ -5,7 +5,7 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
-            <title>Version 1.0</title>
+            <title>Version 1.1</title>
             <description><![CDATA[
                 <h2>New features</h2>
                 <p>
@@ -17,10 +17,10 @@
                   <li>Fixed small typos</li>
                 </p>
             ]]></description>
-            <pubDate>Fri, 28 Feb 2020 19:20:11 +0000</pubDate>
-            <enclosure url="https://github.com/icanzilb/Timelane/releases/download/1.0.0/Timelane.app-1.0.0.zip" 
-                       sparkle:version="1.0"
-                       sparkle:edSignature="am3Vw36FBD/Cw6jwc3WPBt0OxdSkZ+R5AJE70gABikmCeopiGO1IhtJl28jtEp6YFOQ39q2/7+FtYqig4iJDDw==" length="4631881"
+            <pubDate>Mon, 13 Apr 2020 19:20:11 +0000</pubDate>
+            <enclosure url="https://github.com/icanzilb/Timelane/releases/download/1.1/Timelane.app-1.1.zip" 
+                       sparkle:version="1.1"
+                       sparkle:edSignature="y5agNe8Fz/fJwFJiepL5Y0xsR898QJzxOFgC1JxZYpmXaBuiV/+Crw193i5QPW9R0DVSuCgosRJG5EmcFGSqCQ==" length="4631954"
                        type="application/octet-stream" />
             <sparkle:minimumSystemVersion>10.14</sparkle:minimumSystemVersion>
         </item>

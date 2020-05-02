@@ -756,15 +756,15 @@
                             <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="er5-jD-bAf">
                                 <rect key="frame" x="168" y="20" width="292" height="230"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="H0w-F6-jJQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="277" height="230"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="292" height="230"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView editable="NO" drawsBackground="NO" importsGraphics="NO" verticallyResizable="YES" selectionGranularity="word" allowsCharacterPickerTouchBarItem="NO" linkDetection="YES" textCompletion="NO" id="Yxn-IF-m7Q">
-                                            <rect key="frame" x="0.0" y="0.0" width="277" height="230"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="292" height="230"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="277" height="230"/>
+                                            <size key="minSize" width="292" height="230"/>
                                             <size key="maxSize" width="292" height="10000000"/>
                                             <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
@@ -775,7 +775,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="nR0-b0-L99">
-                                    <rect key="frame" x="277" y="0.0" width="15" height="230"/>
+                                    <rect key="frame" x="276" y="0.0" width="16" height="230"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -919,16 +919,17 @@
                                                         </gridCell>
                                                         <gridCell row="P7K-Lf-leI" column="k2b-yQ-rgs" yPlacement="top" id="IH3-Sf-tlK">
                                                             <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PF9-Yj-l6D">
-                                                                <rect key="frame" x="24" y="184" width="320" height="32"/>
-                                                                <textFieldCell key="cell" title="In order to use Timelane from within Xcode you need to install the Timelane Instrument." id="yBN-B2-hAP">
+                                                                <rect key="frame" x="24" y="168" width="320" height="48"/>
+                                                                <textFieldCell key="cell" id="yBN-B2-hAP">
                                                                     <font key="font" usesAppearanceFont="YES"/>
+                                                                    <string key="title">In order to use Timelane from within Xcode you need to install the Timelane Instrument. To do so click the package on the right ⇨</string>
                                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                 </textFieldCell>
                                                             </textField>
                                                         </gridCell>
                                                         <gridCell row="P7K-Lf-leI" column="bEw-UG-cVD" xPlacement="center" yPlacement="top" id="f5r-a5-s8i">
-                                                            <imageView key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xqj-dn-v3I">
+                                                            <imageView key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xqj-dn-v3I" customClass="ClickableImageView" customModule="Timelane" customModuleProvider="target">
                                                                 <rect key="frame" x="392" y="153" width="66" height="66"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="60" id="ll7-On-vkw"/>

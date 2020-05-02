@@ -12,7 +12,7 @@ import Down
 class ViewController: NSViewController {
 
     @IBOutlet var tabView: NSTabView!
-    @IBOutlet var instrumentIcon: NSImageView!
+    @IBOutlet var instrumentIcon: ClickableImageView!
     @IBOutlet var adView: NSImageView!
     @IBOutlet var timelaneLabel: NSTextField!
     
@@ -56,6 +56,8 @@ class ViewController: NSViewController {
         tabView.selectTabViewItem(at: 0)
         
         updateMoreButton()
+        
+        instrumentIcon.onClick = { self.installTimelane(self) }
     }
 
     @IBAction func downloadXcode(_ sender: Any) {

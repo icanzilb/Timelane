@@ -27,6 +27,7 @@
 		9C25F029241E5D6A004AAA35 /* TimelaneCombine in Frameworks */ = {isa = PBXBuildFile; productRef = 9C25F028241E5D6A004AAA35 /* TimelaneCombine */; };
 		9C3C6AFF23DE2F1400F3AAA8 /* about.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9C3C6AFE23DE2F1400F3AAA8 /* about.txt */; };
 		9C4FA1B52441E8CE00064D08 /* AppMover in Frameworks */ = {isa = PBXBuildFile; productRef = 9C4FA1B42441E8CE00064D08 /* AppMover */; };
+		9C83711A245D5322000C1EDF /* ClickableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C837119245D5322000C1EDF /* ClickableImageView.swift */; };
 		9CAA292523DE2B870029FCD2 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAA292423DE2B870029FCD2 /* AboutViewController.swift */; };
 		9CED3DDD2444E00200719205 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CED3DDC2444E00200719205 /* Sparkle.framework */; };
 		9CED3DDF2444E09000719205 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9CED3DDC2444E00200719205 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -79,6 +80,7 @@
 		9C25F01D241E5CA7004AAA35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C25F021241E5CD0004AAA35 /* Worker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
 		9C3C6AFE23DE2F1400F3AAA8 /* about.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = about.txt; sourceTree = "<group>"; };
+		9C837119245D5322000C1EDF /* ClickableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickableImageView.swift; sourceTree = "<group>"; };
 		9CAA292423DE2B870029FCD2 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		9CED3DDC2444E00200719205 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Timelane/Vendor/Sparkle/Sparkle.framework; sourceTree = "<group>"; };
 		9CFD3B2C2409186300AABADC /* gcdbook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gcdbook.png; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		9C1C26D823DDCC0600673570 /* Timelane */ = {
 			isa = PBXGroup;
 			children = (
+				9C837118245D5306000C1EDF /* Components */,
 				9CAA292123DE27DA0029FCD2 /* Controllers */,
 				9C1C26E923DDD94D00673570 /* Resources */,
 				9C1C26D923DDCC0600673570 /* AppDelegate.swift */,
@@ -198,6 +201,14 @@
 				9C25F01A241E5CA7004AAA35 /* LaunchScreen.storyboard */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		9C837118245D5306000C1EDF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9C837119245D5322000C1EDF /* ClickableImageView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		9CAA292123DE27DA0029FCD2 /* Controllers */ = {
@@ -350,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C1C26DC23DDCC0600673570 /* ViewController.swift in Sources */,
+				9C83711A245D5322000C1EDF /* ClickableImageView.swift in Sources */,
 				9C1C26EE23DDDC8B00673570 /* AdController.swift in Sources */,
 				9CAA292523DE2B870029FCD2 /* AboutViewController.swift in Sources */,
 				9C1C26DA23DDCC0600673570 /* AppDelegate.swift in Sources */,
@@ -532,7 +544,7 @@
 				CODE_SIGN_ENTITLEMENTS = Timelane/Timelane.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1.2;
+				CURRENT_PROJECT_VERSION = 1.3;
 				DEVELOPMENT_TEAM = 9MF8G8D9Y5;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -546,7 +558,7 @@
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.underplot.Timelane;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -560,7 +572,7 @@
 				CODE_SIGN_ENTITLEMENTS = Timelane/Timelane.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1.2;
+				CURRENT_PROJECT_VERSION = 1.3;
 				DEVELOPMENT_TEAM = 9MF8G8D9Y5;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -574,7 +586,7 @@
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.underplot.Timelane;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

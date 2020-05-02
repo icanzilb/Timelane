@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>Timelane Changelog</title>
+        <description>Most recent changes with links to updates.</description>
+        <language>en</language>
+        <item>
+            <title>Version 1.3</title>
+            <description><![CDATA[
+                <h2>New features</h2>
+                <p>
+                  <li>Makes installing the Timelane Instrument a bit more intuitive</li>
+                </p>
+                <h2>Bug fixes</h2>
+                <p>
+                  <li>Improved installation instructions</li>
+                </p>
+            ]]></description>
+            <pubDate>Sat, 02 May 2020 09:20:11 +0000</pubDate>
+            <enclosure url="https://github.com/icanzilb/Timelane/releases/download/1.3/Timelane.app-1.3.zip" 
+                       sparkle:version="1.3"
+                       sparkle:edSignature="dRHpAvM/DAvyH2h3Ons4aNBAsZcJILxEvP0+tC4Ew515GfL6c5KoiHiJVZULZhMUf804jg4ic54BRa+8I+qrAg==" length="6358491"
+                       type="application/octet-stream" />
+            <sparkle:minimumSystemVersion>10.14</sparkle:minimumSystemVersion>
+        </item>
+    </channel>
+</rss>

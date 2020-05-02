@@ -2,12 +2,21 @@
   "object": {
     "pins": [
       {
+        "package": "AppMover",
+        "repositoryURL": "https://github.com/icanzilb/AppMover",
+        "state": {
+          "branch": null,
+          "revision": "dc90ac087844ab05b6bd0f12ed10317372f40458",
+          "version": "1.1.0"
+        }
+      },
+      {
         "package": "Down",
         "repositoryURL": "https://github.com/iwasrobbed/Down",
         "state": {
           "branch": null,
-          "revision": "940b173fc1328b0539d0e3681fdfa679501d2bdb",
-          "version": "0.9.0"
+          "revision": "2aada56e6a0a5593a58e1ad583bd605b6d0b58dd",
+          "version": "0.9.2"
         }
       },
       {
@@ -15,8 +24,8 @@
         "repositoryURL": "https://github.com/icanzilb/TimelaneCombine",
         "state": {
           "branch": null,
-          "revision": "585553bc60cd4c9f29cebffdea384d7a27089cad",
-          "version": "1.0.4"
+          "revision": "12c6aa6c3e0d5358f80651f2e7307bde01e6858b",
+          "version": "1.0.5"
         }
       },
       {
@@ -24,8 +33,8 @@
         "repositoryURL": "https://github.com/icanzilb/TimelaneCore",
         "state": {
           "branch": null,
-          "revision": "eed561862b81852b9b0b0ea3a6ba3774b3a7b99f",
-          "version": "1.0.3"
+          "revision": "29d9c8c56575819c025b87c836fb1ce320e405df",
+          "version": "1.0.8"
         }
       }
     ]

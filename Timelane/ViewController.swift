@@ -12,7 +12,7 @@ import Down
 class ViewController: NSViewController {
 
     @IBOutlet var tabView: NSTabView!
-    @IBOutlet var instrumentIcon: NSImageView!
+    @IBOutlet var instrumentIcon: ClickableImageView!
     @IBOutlet var adView: NSImageView!
     @IBOutlet var timelaneLabel: NSTextField!
     
@@ -24,9 +24,6 @@ class ViewController: NSViewController {
     @IBOutlet var adContainer: NSView!
     
     var adController: AdController!
-    var releases: Releases!
-    
-    var latestRelease: Release?
     
     let instrumentURL = Bundle.main.url(forResource: "TimelaneInstrument", withExtension: "instrdst")!
     let stylesURL = Bundle.main.url(forResource: "markdown/styles", withExtension: "css")!
@@ -60,13 +57,7 @@ class ViewController: NSViewController {
         
         updateMoreButton()
         
-        releases = Releases()
-        releases.fetch { [weak self] latest in
-            DispatchQueue.main.async {
-                self?.latestRelease = latest
-                self?.updateMoreButton()
-            }
-        }
+        instrumentIcon.onClick = { self.installTimelane(self) }
     }
 
     @IBAction func downloadXcode(_ sender: Any) {
@@ -109,17 +100,9 @@ class ViewController: NSViewController {
     func updateMoreButton() {
         switch tabView.selectedTabViewItem!.identifier as? String {
         case "setup":
-            if let update = latestRelease {
-                moreButton.isHidden = false
-                moreButton.title = "Download latest release: Version \(update.version) (\(update.name))"
-                moreURL = update.url
-                
-                // Show an alert as well
-                showUpdateDialogue(release: update)
-            } else {
-                moreButton.isHidden = true
-                moreURL = nil
-            }
+            moreButton.isHidden = false
+            moreButton.title = "Official Website: http://timelane.tools"
+            moreURL = URL(string: "http://timelane.tools")!
         case "combine":
             moreButton.isHidden = false
             moreButton.title = "More at: https://github.com/icanzilb/TimelaneCombine"
@@ -135,25 +118,6 @@ class ViewController: NSViewController {
         default:
             moreButton.isHidden = true
             moreURL = nil
-        }
-    }
-    
-    func showUpdateDialogue(release: Release) {
-        guard UserDefaults.standard.string(forKey: "skipVersion") != release.version.description else {
-            return
-        }
-        
-        let alert = NSAlert()
-        alert.messageText = "New Timelane release available!"
-        alert.informativeText = "Timelane \(release.version) (\"\(release.name)\") is available. Would you like to download it from GitHub now?"
-        alert.addButton(withTitle: "Download")
-        alert.addButton(withTitle: "Skip Version")
-        alert.alertStyle = .informational
-        
-        if alert.runModal() == .alertFirstButtonReturn {
-            NSWorkspace.shared.open(release.url)
-        } else {
-            UserDefaults.standard.set(release.version.description, forKey: "skipVersion")
         }
     }
     

@@ -5,21 +5,21 @@
         <description>Most recent changes with links to updates.</description>
         <language>en</language>
         <item>
-            <title>Version 1.3</title>
+            <title>Version 2.0</title>
             <description><![CDATA[
                 <h2>New features</h2>
                 <p>
-                  <li>Makes installing the Timelane Instrument a bit more intuitive</li>
+                  <li>Upgrades to instrument to Timelane protocol 2</li>
                 </p>
                 <h2>Bug fixes</h2>
                 <p>
                   <li>Improved installation instructions</li>
                 </p>
             ]]></description>
-            <pubDate>Sat, 02 May 2020 09:20:11 +0000</pubDate>
-            <enclosure url="https://github.com/icanzilb/Timelane/releases/download/1.3/Timelane.app-1.3.zip" 
-                       sparkle:version="1.3"
-                       sparkle:edSignature="dRHpAvM/DAvyH2h3Ons4aNBAsZcJILxEvP0+tC4Ew515GfL6c5KoiHiJVZULZhMUf804jg4ic54BRa+8I+qrAg==" length="6358491"
+            <pubDate>Wed, 28 Oct 2020 09:20:11 +0000</pubDate>
+            <enclosure url="https://github.com/icanzilb/Timelane/releases/download/2.0/Timelane.app-2.0.zip" 
+                       sparkle:version="2.0"
+                       sparkle:edSignature="XaynpweXVPTiUFyXFDPK0Sm8Nfkf7GGdjYbbDHnYfWri9KCzlR8CFhrAcViSRuYKgxICCF+WBSeubO5VBFPECQ==" length="6497328"
                        type="application/octet-stream" />
             <sparkle:minimumSystemVersion>10.14</sparkle:minimumSystemVersion>
         </item>

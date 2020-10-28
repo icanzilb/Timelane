@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9C1C26D523DDCC0600673570"
-               BuildableName = "Timelane.app"
-               BlueprintName = "Timelane"
+               BlueprintIdentifier = "9C25EFFC241E59F2004AAA35"
+               BuildableName = "TimelaneInstrument.instrdst"
+               BlueprintName = "TimelaneInstrument"
                ReferencedContainer = "container:Timelane.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,31 +32,19 @@
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      selectedDebuggerIdentifier = ""
+      selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9C1C26D523DDCC0600673570"
-            BuildableName = "Timelane.app"
-            BlueprintName = "Timelane"
-            ReferencedContainer = "container:Timelane.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "RESET_USERDEFAULTS"
-            value = "YES"
-            isEnabled = "NO">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
+      <PathRunnable
+         runnableDebuggingMode = "0"
+         BundleIdentifier = "com.apple.dt.Instruments"
+         FilePath = "/Users/marin/Developer/Xcode-beta.app/Contents/Applications/Instruments.app">
+      </PathRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -64,16 +52,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9C1C26D523DDCC0600673570"
-            BuildableName = "Timelane.app"
-            BlueprintName = "Timelane"
+            BlueprintIdentifier = "9C25EFFC241E59F2004AAA35"
+            BuildableName = "TimelaneInstrument.instrdst"
+            BlueprintName = "TimelaneInstrument"
             ReferencedContainer = "container:Timelane.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -11,7 +11,7 @@
     <id>tools.timelane</id>
     
     <!-- This version should match the client protocol version to guarantee the plotted results are correct -->
-    <version>1</version>
+    <version>2</version>
     <title>Timelane Tools</title>
     <owner>
         <name>Marin Todorov</name>
@@ -34,9 +34,10 @@
         
         <start-pattern>
             <message>"subscribe:" ?subscription-name "###source:" ?source "###id:" ?subscription-id</message>
+            <user-backtrace>?backtrace</user-backtrace>
         </start-pattern>
         <end-pattern>
-            <message>"completion:" ?completion ",error:###" ?error-message "###"</message>
+            <message>"completion:" ?completion "###error:" ?error-message</message>
         </end-pattern>
         
         <start-column>
@@ -63,6 +64,13 @@
             <title>Completion</title>
             <type>uint32</type>
             <expression>?completion</expression>
+        </column>
+        
+        <column>
+            <mnemonic>backtrace</mnemonic>
+            <title>Backtrace</title>
+            <type>backtrace</type>
+            <expression>?backtrace</expression>
         </column>
         
         <column>
@@ -116,7 +124,10 @@
             
             <mnemonic>countable-col</mnemonic>
             <expression>(+ 1 0)</expression>
-            
+
+            <mnemonic>backtrace</mnemonic>
+            <expression>?backtrace</expression>
+
         </open-interval-template>
         
     </os-signpost-interval-schema>
@@ -213,21 +224,21 @@
             <mnemonic>version-message-col</mnemonic>
             <title>Version Message</title>
             <type>string</type>
-            <expression>(switch ?version (case 1 then "Correct Timelane client version: 1")(default "Upgrade your Timelane client package from http://timelane.tools ! Expected Timelane protocol 1 but got a different version"))</expression>
+            <expression>(switch ?version (case 2 then "Correct Timelane client version: 2")(default "Upgrade your Timelane client package from http://timelane.tools ! Expected Timelane protocol 2 but got a different version"))</expression>
         </column>
 
         <column>
             <mnemonic>version-color-col</mnemonic>
             <title>Color</title>
             <type>event-concept</type>
-            <expression>(switch ?version (case 1 then "Green")(default "Red"))</expression>
+            <expression>(switch ?version (case 2 then "Green")(default "Red"))</expression>
         </column>
 
         <column>
             <mnemonic>client-version-col</mnemonic>
             <title>Client Version Label</title>
             <type>string</type>
-            <expression>(switch ?version (case 1 then "🆗 Version 1")(default "⚠️ Upgrade Timelane"))</expression>
+            <expression>(switch ?version (case 2 then "🆗 Version 2")(default "⚠️ Upgrade Timelane"))</expression>
         </column>
 
         
